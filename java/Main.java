@@ -15,30 +15,29 @@ public class Main {
 
                 while ((line = br.readLine()) != null) {
                     String[] parts = line.split("\\|");
-                    int[] intParts = {Integer.parseInt(parts[0]), Integer.parseInt(parts[1])};
+                    int part1 = Integer.parseInt(parts[0]), part2 = Integer.parseInt(parts[1]);
 
-                    if (map.containsKey(intParts[0])) {
+                    if (map.containsKey(part1)) {
                         Integer seqNumber;
-                        Map tempMap = map.get(intParts[0]);
+                        Map tempMap = map.get(part1);
 
-                        if ((seqNumber = (map.get(intParts[0]).get(intParts[1]))) != null) {
-                            int[] array = {intParts[0], intParts[1], seqNumber, 0};
+                        if ((seqNumber = (map.get(part1).get(part2))) != null) {
+                            int[] array = {part1, part2, seqNumber, 0};
                             output.add(array);
                         }
                         else {
-                            Map temp = map.get(intParts[0]);
+                            Map temp = map.get(part1);
                             seqNumber = temp.keySet().size()+1;
-                            temp.put(intParts[1], seqNumber);
-                            int[] array = {intParts[0], intParts[1], seqNumber, 0};
+                            temp.put(part2, seqNumber);
+                            int[] array = {part1, part2, seqNumber, 0};
                             output.add(array);
                         }
                     }
                     else {
-                        //System.out.println("map.put(" + intParts[0] + ", new HashMap<>().put(" + intParts[1] + ", 1)");
                         Map seqMap = new HashMap<>();
-                        seqMap.put(intParts[1], 1);
-                        map.put(intParts[0], seqMap);
-                        int[] array = {intParts[0], intParts[1], 1, 0};
+                        seqMap.put(part2, 1);
+                        map.put(part1, seqMap);
+                        int[] array = {part1, part2, 1, 0};
                         output.add(array);
                     }
                 }

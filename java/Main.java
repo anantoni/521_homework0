@@ -22,7 +22,7 @@ public class Main {
 
                 Integer seqNumber;
                 Map<Integer, Integer> temp = map.get(part1);
-                if ((seqNumber = (temp.get(part2))) == null){
+                if ((seqNumber = temp.get(part2)) == null){
                     seqNumber = temp.keySet().size()+1;
                     temp.put(part2, seqNumber);
                 }

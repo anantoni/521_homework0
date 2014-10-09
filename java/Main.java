@@ -21,8 +21,8 @@ public class Main {
                     map.put(part1, new HashMap<>());
 
                 Integer seqNumber;
-                if ((seqNumber = (map.get(part1).get(part2))) == null){
-                    Map<Integer, Integer> temp = map.get(part1);
+                Map<Integer, Integer> temp = map.get(part1);
+                if ((seqNumber = (temp.get(part2))) == null){
                     seqNumber = temp.keySet().size()+1;
                     temp.put(part2, seqNumber);
                 }

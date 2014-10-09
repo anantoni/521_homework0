@@ -23,18 +23,18 @@ int main() {
 
         if (map1.find(parts.first) == map1.end()) {
             map<int, int> map2;
-            map1.insert(pair<int, map<int,int> > (parts.first, map2));
+            map1[parts.first] = map2;
         }
-    
+
         int seqNumber;
-        map<int, int> &temp = map1.find(parts.second)->second;
+        map<int, int> &temp = map1[parts.first];
         if (temp.find(parts.second) == temp.end()) {
             seqNumber = temp.size()+1;
-            temp.insert(pair<int, int> (parts.second, seqNumber));
+            temp[parts.second] = seqNumber;
             cout << seqNumber << endl;
-        } 
-        else 
-            seqNumber = temp.find(parts.second)->second;
+        }
+        else
+            seqNumber = temp[parts.second];
         vector<int> v;
         v.push_back(parts.first);
         v.push_back(parts.second);
@@ -43,7 +43,7 @@ int main() {
     }
 
     for (vector<vector<int> >::iterator it = output.begin(); it != output.end(); ++it)  
-		cout << (*it)[0] << "|" << (*it)[1] << "[" << (*it)[2] << " of " << map1.find((*it)[0])->second.size() <<  endl;
+        cout << (*it)[0] << "|" << (*it)[1] << "[" << (*it)[2] << " of " << map1.find((*it)[0])->second.size() << "]" << endl;
 
     return 0;
 }

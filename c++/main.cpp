@@ -43,7 +43,7 @@ int main() {
     }
 
     for (vector<vector<int> >::iterator it = output.begin(); it != output.end(); ++it)  
-        cout << (*it)[0] << "|" << (*it)[1] << "[" << (*it)[2] << " of " << map1.find((*it)[0])->second.size() << "]" << endl;
+        cout << (*it)[0] << "|" << (*it)[1] << "[" << (*it)[2] << " of " << map1[(*it)[0]].size() << "]" << endl;
 
     return 0;
 }

@@ -1,0 +1,19 @@
+CC     		:= g++
+CFLAGS  	:= -g -Wall -Wextra -std=c++98 -pedantic
+EXECUTABLE  := exe
+SOURCES 	:= main.cpp
+
+default: $(EXECUTABLE)
+
+$(EXECUTABLE): main.o
+	$(CC) $(CFLAGS) -o exe main.o
+
+main.o: main.cpp
+	$(CC) $(CFLAGS) -c main.cpp
+
+.PHONY: clean 
+clean:
+	rm main.o
+
+.PHONY: check-syntax
+	$(CC) $(CFLAGS) -fsyntax-only $(SOURCES)

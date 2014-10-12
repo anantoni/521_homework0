@@ -1,9 +1,6 @@
 #include <iostream>
-#include <string>
 #include <vector>
 #include <map>
-#include <set>
-#include <cstdio>
 #include <cstdlib>
 using namespace std;
 
@@ -29,9 +26,8 @@ int main() {
         int seqNumber;
         map<int, int> &temp = map1[parts.first];
         if (temp.find(parts.second) == temp.end()) {
-            seqNumber = temp.size()+1;
+            seqNumber = temp.size() + 1;
             temp[parts.second] = seqNumber;
-            cout << seqNumber << endl;
         }
         else
             seqNumber = temp[parts.second];
@@ -42,7 +38,7 @@ int main() {
         output.push_back(v);
     }
 
-    for (vector<vector<int> >::iterator it = output.begin(); it != output.end(); ++it)  
+    for (vector<vector<int> >::iterator it = output.begin(); it != output.end(); ++it)
         cout << (*it)[0] << "|" << (*it)[1] << "[" << (*it)[2] << " of " << map1[(*it)[0]].size() << "]" << endl;
 
     return 0;

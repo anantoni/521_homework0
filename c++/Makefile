@@ -15,5 +15,9 @@ main.o: main.cpp
 clean:
 	rm main.o
 
+.PHONY: dist-clean
+dist-clean:
+	rm main.o $(EXECUTABLE)
+
 .PHONY: check-syntax
 	$(CC) $(CFLAGS) -fsyntax-only $(SOURCES)

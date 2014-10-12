@@ -1,5 +1,5 @@
 CC     		:= g++
-CFLAGS  	:= -g -Wall -Wextra -std=c++98 -pedantic
+CFLAGS  	:= -O2 -g -Wall -Wextra -std=c++98 -pedantic
 EXECUTABLE  := exe
 SOURCES 	:= main.cpp
 
